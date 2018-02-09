@@ -29,5 +29,9 @@ film1.update
 ticket1.customer_id = customer1.id
 ticket1.update
 
+Customer.all
+Film.all
+Ticket.all
+
 binding.pry
 nil
