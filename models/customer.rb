@@ -44,5 +44,18 @@ class Customer
     films.map {|film|Film.new(film)}
   end
 
+  def remove_price()
+    funds = @funds.to_i
+    price = film().map {|film| film.price.to_i}
+    total_price = 0
+    total_price = price.sum
+    @funds -= total_price
+    update()
+  end
+
+  def ticket_purchases()
+    film.count
+  end
+
 
 end

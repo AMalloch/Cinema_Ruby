@@ -20,6 +20,9 @@ film1.save
 ticket1 = Ticket.new({"customer_id" => customer1.id, "film_id" => film1.id})
 ticket1.save
 
+ticket2 = Ticket.new({"customer_id" => customer1.id, "film_id" => film1.id})
+ticket2.save
+
 customer2.name = "Tim Nevis"
 customer2.update
 
@@ -28,9 +31,11 @@ film1.update
 
 ticket1.customer_id = customer1.id
 ticket1.update
-
+#if customer1.id = ticket.customer_id
 customer1.film
 film1.customer
+
+customer1.remove_price
 
 Customer.all
 Film.all

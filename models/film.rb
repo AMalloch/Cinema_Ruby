@@ -44,4 +44,8 @@ class Film
      customers.map{|customer| Customer.new(customer)}
    end
 
+  def customers_watching()
+     customer.count
+  end
+
 end
