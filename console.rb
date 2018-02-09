@@ -29,6 +29,9 @@ film1.update
 ticket1.customer_id = customer1.id
 ticket1.update
 
+customer1.film
+film1.customer
+
 Customer.all
 Film.all
 Ticket.all
