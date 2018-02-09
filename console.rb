@@ -20,5 +20,14 @@ film1.save
 ticket1 = Ticket.new({"customer_id" => customer1.id, "film_id" => film1.id})
 ticket1.save
 
+customer2.name = "Tim Nevis"
+customer2.update
+
+film1.title = "Bay in a Wagon"
+film1.update
+
+ticket1.customer_id = customer1.id
+ticket1.update
+
 binding.pry
 nil
