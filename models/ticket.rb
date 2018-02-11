@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 class Ticket
 
  attr_reader :id
- attr_accessor :customer_id, :film_id
+ attr_accessor :customer_id, :film_id, :screen_id
 
  def initialize(options)
    @id = options['id'].to_i if options['id'].to_i
@@ -36,5 +36,11 @@ class Ticket
    values = [@customer_id, @film_id, @screen_id, @id]
    SqlRunner.run(sql, values)
  end
+
+ # def popular_screen_time()
+ #   screenings = SqlRunner.run(sql, values)
+ #   pop_screen = screenings.map{|screening| Screening.new(screening)}
+ #   pop_screen.mode
+ # end
 
 end
