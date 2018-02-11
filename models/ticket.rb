@@ -37,10 +37,4 @@ class Ticket
    SqlRunner.run(sql, values)
  end
 
- # def popular_screen_time()
- #   screenings = SqlRunner.run(sql, values)
- #   pop_screen = screenings.map{|screening| Screening.new(screening)}
- #   pop_screen.mode
- # end
-
 end

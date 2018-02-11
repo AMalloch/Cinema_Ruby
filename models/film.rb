@@ -38,14 +38,35 @@ class Film
 
   def customer()
     sql = "SELECT * FROM customers INNER JOIN
-     tickets ON customers.id = tickets.customer_id WHERE film_id = $1"
-     values = [@id]
-     customers = SqlRunner.run(sql, values)
-     customers.map{|customer| Customer.new(customer)}
-   end
+    tickets ON customers.id = tickets.customer_id WHERE film_id = $1"
+    values = [@id]
+    customers = SqlRunner.run(sql, values)
+    customers.map{|customer| Customer.new(customer)}
+  end
+
+  def screening()
+    sql = "SELECT * FROM screenings INNER JOIN
+    tickets ON screenings.id = tickets.screen_id WHERE film_id = $1"
+    values = [@id]
+    screenings = SqlRunner.run(sql, values)
+    screenings.map {|screening|Screening.new(screening)}
+  end
+
+  def most_popular_time
+    screening.
+  end
+
+    # time = screening.each do |id, screentime|
+    # end
+    #   time.max_by
+    # popular_time = screening
+    # popular_time.group_by(&:itself).max_by(&:size).first
+    # screening.map{|time| screening.count(time)}
+    # screening.group_by(&:itself).values.max_by(&:size).first
+    # screening.uniq.map {|time| screening.count(time)}.max
 
   def customers_watching()
-     customer.count
+    customer.count
   end
 
 end
